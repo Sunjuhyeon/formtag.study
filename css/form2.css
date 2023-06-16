@@ -1,0 +1,76 @@
+*{
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-weight: 400;
+}
+.formtag {
+    border: 2px solid black;
+    line-height: 2;
+    margin-top: 1em;
+    height: auto;
+    align-items: center;
+    padding: 1em;
+}
+.formtag:focus-within{
+    border: none;
+    outline: 5px solid tomato;
+}
+.phoneNum:focus-within{
+    border: none;
+    outline: 5px solid tomato;
+}
+
+
+input {
+    border: none;
+}
+ul,
+li {
+    list-style: none;
+}
+.CheckboxSpan {
+    margin-left: 1em;
+}
+.phoneNum {
+    border: 2px solid black;
+    padding: 1em;
+}
+
+
+#interview [type="checkbox"] {
+    display: none;
+}
+#interview [type="checkbox"]+label::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-size: 2em;
+    display: inline-block;
+    margin-right: 10px;
+}
+#interview [type="checkbox"]:checked+label::before {
+    color: tomato;
+    font-weight: 700;
+}
+#checkbox label:hover{
+    color: tomato;  
+}
+
+
+#interview [type="radio"] {
+    appearance: none;
+    border: 2px solid gray;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    transition: border .2s ease-in-out;
+}
+#interview [type="radio"]:checked {
+    border: 8px solid tomato;
+}
+/* #interview [type="radio"]:focus-visible{
+outline-offset: max(2px, 0.1em);
+outline: max(2px, 0.1em) dotted tomato;
+} */
+#interview [type="radio"]:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+    cursor: pointer;
+}

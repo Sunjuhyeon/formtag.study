@@ -1,0 +1,147 @@
+:root{
+    --bg-section : #f0ece8;
+    --bg-form : #ffffff;
+    --hd-a-base : #999;
+    --dark-base : #1e1e1e;
+    --sub-base : #dddddd;
+    --active-base : #fff3e0;
+    --font-basic : 'Noto Sans KR',sans-serif;
+}
+.font300{ font-weight: 300 !important;}
+.font400{ font-weight: 400 !important;}
+.font700{ font-weight: 700 !important;}
+
+.bgSection{
+    background-color: var(--bg-section) !important;
+    padding-top: 1rem;
+}
+#hd{
+    position: relative;
+    z-index: 1050;
+    h1{
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 25%;
+        padding: .6em 0 0 .2em;
+        transform: rotate(-10deg);
+        a{
+            font-size: 1rem;
+        }
+    }
+    a{
+        font-size: .74rem;
+        text-decoration: none;
+        color: var(--dark-base);
+    }
+}
+#contact{
+    position: relative;
+    z-index: 1100;
+    border-radius: 0 0 2rem 2rem;
+    margin-bottom: 100vh;
+
+    color: var(--dark-base);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2em;
+    line-height: 2;
+
+    h2{
+        position: relative;
+        transform: translateY(2rem);
+        strong{
+            font-size: 10rem;
+            line-height: .5;
+        }
+        span{
+            background-color: var(--bg-section);
+            font-size: 1.5rem;
+            position: absolute;
+            white-space: nowrap;
+            right: -3%;
+            top: 50%;
+            border: 2px solid var(--dark-base);
+            transform: rotate(-10deg) translateY(-50%);
+        }
+        @media(max-width:990px){
+            strong{
+                font-size: 14vw;
+            }
+            span{
+                font-size: 1vw;
+            }
+        }
+    }
+
+    #fromSection{
+        border-radius: 2em;
+        overflow: hidden;
+    }
+    input::placeholder{
+        color: #999;
+        font-size: .8em;
+    }
+    input[type=text]{
+        width: 100%;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=url],{
+        border-width: 0 0 1px 0;
+        border-color: var(--dark-base);
+        border-style: solid;
+        &:focus{
+            background-color: var(--active-base) !important;
+        }
+    }
+    input[type=checkbox],
+    input[type=radio]{
+        display: none;
+        &:checked + label::before{
+            color: red;
+            font-weight: bolder;
+        }
+    }
+    input[type=checkbox]+label {
+        &::before {
+            content: "\F272";
+            padding-right: .5rem;
+            font-family: "bootstrap-icons";
+        }
+    }
+    input[type=radio]+label {
+        &::before {
+            content: "\F287";
+            padding-right: .5rem;
+            color: #dddddd;
+            font-family: "bootstrap-icons";
+        }
+    }
+}
+
+    label{
+        white-space: nowrap;
+        
+    }
+    label[for=company],
+    label[for=Lname],
+    label[for=Fname],
+    label[for=phone],
+    label[for=sns],
+    label[for=term],
+    label[for=agree]{
+        &::after{
+            content: "\F151";
+            color: red;
+            font-family: "bootstrap-icons";
+            font-size: .5em;
+        }
+        &::before{
+            content: "";
+            // color: transparent;
+            font-family: "bootstrap-icons";
+            display: inline-block;
+        }
+    }
+
+}
