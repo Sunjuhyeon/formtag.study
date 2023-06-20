@@ -45,6 +45,12 @@
             </div>
             <div class="bg-white col-10 mx-auto rounded-5 p-5">
                 <form id="formSection" action="http://naver.com" method="post" name="contact">
+                    <!-- 주소창에 변수의 해당값이 대입되어 있는 것이 보임.
+                         GET방식은 주소창에 노출되는 값들로 작은 데이터들일때,
+                            :검색페이지
+                         POST방식은 숨김처리 및 큰 데이터 넘길 때 
+                            :회원가입 페이지-->
+                    
                     <ul class="d-flex flex-wrap">
                         <li class="col-12">
                             <label for="company">Company</label>
@@ -58,17 +64,47 @@
                             <label for="Fname">First name</label>
                             <input type="text" id="Fname" name="Fname" placeholder="First name"  required>
                         </li>
-                        <li class="col-12 d-flex flex-column">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email">
+                        <li class="checkbox-group" id="">
+                            <h3>언어</h3>
+                            <div class="d-flex flex-wrap align-items-center" id="leng-section">
+                                <input type="checkbox" id="lengall">
+                                <label for="lengall" class="me-2"><i class="bi bi-check2"></i></i>All</label>
+                                <input type="checkbox" id="leng[0]" name="leng[0]" class="leng" value="노드">
+                                <label for="leng[0]" class="me-2"><i class="bi bi-check2"></i></i>Node.js</label>
+                                <input type="checkbox" id="leng[1]" name="leng[1]" class="leng" value="리엑트">
+                                <label for="leng[1]" class="me-2"><i class="bi bi-check2"></i></i>React</label>
+                                <input type="checkbox" id="leng[2]" name="leng[2]" class="leng" value="제이쿼리">
+                                <label for="leng[2]" class="me-2"><i class="bi bi-check2"></i></i>jquery</label>
+                                <input type="checkbox" id="leng[3]" name="leng[3]" class="leng" value="자바 스크립트">
+                                <label for="leng[3]" class="me-2"><i class="bi bi-check2"></i></i>Java Script</label>
+                                <input type="type" id="leng[4]" name="leng[4]" placeholder="기타 다른언어">
+                            </div>
+                        </li>
+                        <li class="col-12">
+                            <label for="" class="d-flex">E-mail</label>
+                            <div id="email-section" class="d-sm-flex">
+                                <input type="text"name="email[0]">
+                                <span>@</span>
+                                <select name="email[1]" class="mail-select" aria-label="Mail select example">
+                                    <option selected value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                    <option value="google.com">google.com</option>
+                                    <option>직접입력</option>
+                                </select>
+                                <input class="direct" type="text" name="email[1]" placeholder="직접입력">
+                                <!-- 일직선으로 가운데 정렬할 것 
+                                    셀렉트 박스의 직접입력을 선택하면 
+                                    직접입력 input이 노출되는 자바스크립트 삽입-->
+            
+                            </div>
                         </li>
                         <li class="col-12 d-flex flex-column">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000">
+                            <input type="tel" id="phone" name="phone" placeholder="000-0000-0000 양식으로 기입해주세요.">
                         </li>
                         <li class="col-12 d-flex flex-column">
-                            <label for="sns">SNS link</label>
-                            <input type="url" id="sns" name="sns">
+                            <label for="sns">SNS</label>
+                            <input type="url" id="sns" name="sns" placeholder="카카오 아이디">
                         </li>
                         <li class="col-12 d-flex flex-column">
                             <label for="plan">Plan</label>
@@ -121,7 +157,7 @@
                             <textarea name="message" id="message" placeholder="궁금한 점을 입력해주세요."></textarea>
                         </li>
                         <li class="col-12 d-flex mt-1 justify-content-center">
-                            <input type="checkbox" id="agree" name="agree" required>
+                            <input type="checkbox" id="agree" required>
                             <label for="agree">개인정보 정책 동의</label>
                         </li>
                         <li class="col-12 d-flex mt-4 justify-content-center">

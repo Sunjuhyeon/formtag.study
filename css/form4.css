@@ -5,7 +5,7 @@
   --dark-base: #1e1e1e;
   --sub-base: #dddddd;
   --active-base: #fff3e0;
-  --font-basic: "Noto Sans KR",sans-serif;
+  --font-basic: "Noto Sans KR", sans-serif;
 }
 
 .font300 {
@@ -49,6 +49,7 @@
   position: relative;
   z-index: 1100;
   border-radius: 0 0 2rem 2rem;
+  margin-bottom: 100vh;
   color: var(--dark-base);
   font-family: "Noto Sans KR", sans-serif;
   font-size: 1.2em;
@@ -85,11 +86,19 @@
   overflow: hidden;
 }
 #contact input::-moz-placeholder {
-  color: #999;
+  color: #ccc;
   font-size: 0.8em;
 }
 #contact input::placeholder {
-  color: #999;
+  color: #ccc;
+  font-size: 0.8em;
+}
+#contact input::-webkit-input-placeholder {
+  color: #ccc;
+  font-size: 0.8em;
+}
+#contact input:-ms-input-placeholder {
+  color: #ccc;
   font-size: 0.8em;
 }
 #contact input[type=text] {
@@ -118,8 +127,13 @@
   color: red;
   font-weight: bolder;
 }
-#contact input[type=checkbox] + label::before {
+#contact input[name=plan] + label::before {
   content: "\f272";
+  padding-right: 0.5rem;
+  font-family: "bootstrap-icons";
+}
+#contact input[id=agree] + label::before {
+  content: "\f271";
   padding-right: 0.5rem;
   font-family: "bootstrap-icons";
 }
@@ -129,33 +143,42 @@
   color: #dddddd;
   font-family: "bootstrap-icons";
 }
-#contact input[type=submit] + label::before {
-  content: "\f272";
-  padding-right: 0.5rem;
-  font-family: "bootstrap-icons";
+#contact #email-section .direct {
+  display: none;
 }
-#contact label {
+#contact #email-section.act .direct {
+  display: block;
+}
+#contact #email-section.act .mail-select {
+  margin-right: 1rem;
+}
+#contact .checkbox-group input[type=checkbox]:checked + label i {
+  color: red;
+}
+
+label {
   white-space: nowrap;
 }
-#contact label[for=company]::after,
-#contact label[for=Lname]::after,
-#contact label[for=Fname]::after,
-#contact label[for=phone]::after,
-#contact label[for=sns]::after,
-#contact label[for=term]::after,
-#contact label[for=agree]::after {
+
+label[for=company]::after,
+label[for=Lname]::after,
+label[for=Fname]::after,
+label[for=phone]::after,
+label[for=sns]::after,
+label[for=term]::after,
+label[for=agree]::after {
   content: "\f151";
   color: red;
   font-family: "bootstrap-icons";
   font-size: 0.5em;
 }
-#contact label[for=company]::before,
-#contact label[for=Lname]::before,
-#contact label[for=Fname]::before,
-#contact label[for=phone]::before,
-#contact label[for=sns]::before,
-#contact label[for=term]::before,
-#contact label[for=agree]::before {
+label[for=company]::before,
+label[for=Lname]::before,
+label[for=Fname]::before,
+label[for=phone]::before,
+label[for=sns]::before,
+label[for=term]::before,
+label[for=agree]::before {
   content: "";
   font-family: "bootstrap-icons";
   display: inline-block;
